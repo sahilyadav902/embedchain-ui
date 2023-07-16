@@ -21,6 +21,12 @@ Note: The build command might take a while to install all the packages depending
 docker-compose up
 ```
 
+Note: If a new version of the `embedchain` package is released, open Docker Desktop, go to the `embedchain_backend` container inside the `embedchain_ui` container, and run the following command in its terminal. After that restart your server to see the changes.
+
+```bash
+pip install embedchain --upgrade
+```
+
 ## Manual Setup
 
 - To setup embedchain-ui manually, follow the next steps after cloning the repository.
@@ -57,6 +63,12 @@ Note: Installing the packages might take a while, please wait for the installati
 
 ```bash
 python server.py
+```
+
+Note: If a new version of the `embedchain` package is released, activate your virtual environment and run the following command. After that restart your server to see the changes.
+
+```bash
+pip install embedchain --upgrade
 ```
 
 ### Setup Frontend
