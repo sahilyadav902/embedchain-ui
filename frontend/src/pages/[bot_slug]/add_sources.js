@@ -1,5 +1,5 @@
 import Wrapper from "@/components/Wrapper";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/containers/Sidebar";
 import AddSources from "@/containers/AddSources";
 
 export default function Sources() {

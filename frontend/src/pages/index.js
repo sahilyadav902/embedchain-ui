@@ -1,5 +1,5 @@
 import Wrapper from "@/components/Wrapper";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/containers/Sidebar";
 import CreateBot from "@/components/dashboard/CreateBot";
 import SetOpenAIKey from "@/components/dashboard/SetOpenAIKey";
 import PurgeChats from "@/components/dashboard/PurgeChats";

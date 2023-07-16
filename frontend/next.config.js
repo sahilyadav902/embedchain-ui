@@ -10,7 +10,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   experimental: {
-    proxyTimeout: 600000,
+    proxyTimeout: 6000000,
   },
 };
 
