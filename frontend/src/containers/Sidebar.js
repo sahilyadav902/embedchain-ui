@@ -123,14 +123,14 @@ export default function Sidebar() {
                   </svg>
                 </button>
                 <ul id={bot.slug} className="hidden text-sm py-2 space-y-2">
-                  <li>
+                  {/* <li>
                     <Link
                       href={`/${bot.slug}/add_sources`}
                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200"
                     >
                       Add Sources
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       href={`/${bot.slug}/app`}
@@ -139,14 +139,14 @@ export default function Sidebar() {
                       App
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       href={`/${bot.slug}/person_app`}
                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200"
                     >
                       Person App
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       href={`/${bot.slug}/open_source_app`}
@@ -155,14 +155,14 @@ export default function Sidebar() {
                       Open Source App
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       href={`/${bot.slug}/person_open_source_app`}
                       className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200"
                     >
                       Person Open Source App
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
             ))}

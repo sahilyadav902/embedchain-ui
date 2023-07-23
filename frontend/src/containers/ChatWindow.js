@@ -46,7 +46,7 @@ export default function ChatWindow({ embedding_model, app_type }) {
         query: queryInput,
         embedding_model,
         app_type,
-        persona: bot.persona,
+        // persona: bot.persona,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -142,6 +142,8 @@ export default function ChatWindow({ embedding_model, app_type }) {
             </div>
           </div>
         </div>
+
+        <div className="bg-white fixed bottom-0 left-0 right-0 h-32 sm:h-20"></div>
 
         {/* Query Form */}
         <form

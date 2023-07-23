@@ -4,3 +4,4 @@ dist
 .env
 .git
 .next/
+trash_files/

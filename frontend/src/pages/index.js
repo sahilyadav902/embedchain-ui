@@ -4,7 +4,6 @@ import CreateBot from "@/components/dashboard/CreateBot";
 import SetOpenAIKey from "@/components/dashboard/SetOpenAIKey";
 import PurgeChats from "@/components/dashboard/PurgeChats";
 import DeleteBot from "@/components/dashboard/DeleteBot";
-import PurgeDB from "@/components/dashboard/PurgeDB";
 
 export default function Home() {
   return (
@@ -20,11 +19,16 @@ export default function Home() {
             dataset
           </p>
         </div>
-        <SetOpenAIKey />
-        <CreateBot />
-        <DeleteBot />
-        <PurgeChats />
-        <PurgeDB />
+        <div className="flex flex-col">
+          <div className="flex flex-col md:flex-row md:space-x-4">
+            <SetOpenAIKey />
+            <CreateBot />
+          </div>
+          <div className="flex flex-col md:flex-row md:space-x-4">
+            <DeleteBot />
+            <PurgeChats />
+          </div>
+        </div>
       </Wrapper>
     </>
   );
