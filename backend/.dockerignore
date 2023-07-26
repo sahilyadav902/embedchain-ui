@@ -4,3 +4,4 @@ pyenv
 venv
 .env
 .git
+trash_files/

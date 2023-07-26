@@ -3,3 +3,4 @@ database
 pyenv
 venv
 .env
+trash_files/

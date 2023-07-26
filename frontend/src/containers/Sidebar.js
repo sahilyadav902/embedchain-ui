@@ -51,6 +51,7 @@ export default function Sidebar() {
             <Link href="/" className="flex items-center justify-evenly  mb-5">
               <Image
                 src="/images/embedchain.png"
+                alt="Embedchain Logo"
                 width={45}
                 height={0}
                 className="block h-auto w-auto"
@@ -104,7 +105,7 @@ export default function Sidebar() {
               </li>
             </ul>
           </div>
-          <div className="bg-gray-200 fixed bottom-0 left-0 right-0 h-20"></div>
+          <div className="bg-gray-200 absolute bottom-0 left-0 right-0 h-20"></div>
 
           {/* Social Icons */}
           <div className="mt-auto mb-3 flex flex-row justify-evenly sticky bottom-3">
