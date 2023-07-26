@@ -26,10 +26,10 @@ def get_answer():
                 chat_bot = App()
             # elif app_type == "p_app":
             #     chat_bot = PersonApp(persona)
-        elif embedding_model == "open_source":
-            os.chdir(DB_DIRECTORY_OPEN_SOURCE)
-            if app_type == "os_app":
-                chat_bot = OpenSourceApp()
+        # elif embedding_model == "open_source":
+        #     os.chdir(DB_DIRECTORY_OPEN_SOURCE)
+        #     if app_type == "os_app":
+        #         chat_bot = OpenSourceApp()
             # elif app_type == "pos_app":
             #     chat_bot = PersonOpenSourceApp(persona)
 

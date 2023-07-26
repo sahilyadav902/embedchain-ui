@@ -46,7 +46,6 @@ export default function ChatWindow({ embedding_model, app_type }) {
         query: queryInput,
         embedding_model,
         app_type,
-        // persona: bot.persona,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -168,7 +167,7 @@ export default function ChatWindow({ embedding_model, app_type }) {
               disabled={isLoading}
               className={`${
                 isLoading ? "opacity-60" : ""
-              } w-full bg-black hover:bg-blue-800 rounded-xl font-bold text-lg text-white px-6 h-11`}
+              } w-full bg-black hover:bg-blue-800 rounded-xl text-lg text-white px-6 h-11`}
             >
               Send
             </button>

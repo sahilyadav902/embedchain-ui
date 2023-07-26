@@ -23,6 +23,16 @@ def set_key():
     return make_response(jsonify(message='API key saved successfully'), 200)
 
 
+# Check OpenAI Key
+@dashboard_bp.route('/api/check_key', methods=['GET'])
+def check_key():
+    existing_key = APIKey.query.first()
+    if existing_key:
+        return make_response(jsonify(status="ok", message='OpenAI Key exists'), 200)
+    else:
+        return make_response(jsonify(status="fail", message='No OpenAI Key present'), 200)
+
+
 # Create a bot
 @dashboard_bp.route('/api/create_bot', methods=['POST'])
 def create_bot():

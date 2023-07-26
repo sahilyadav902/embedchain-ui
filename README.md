@@ -94,22 +94,9 @@ npm start
 
 # 🚀 Usage Instructions
 
-## Dashboard
-
 - Go to [http://localhost:3000/](http://localhost:3000/) in your browser to view the dashboard.
-- Here you can control different features for your bots.
-- Create a new bot and it will appear on the `Sidebar` to the left.
-- Click on the bot name in the Sidebar to reveal the two types of bot.
-- You can also delete a bot you no longer need from the Dashboard.
-
-## App
-
-- `App` uses OpenAI's model, so it is a paid bot. You will be charged for embedding model usage and LLM usage.
-- You have to setup `OpenAI API key` 🔑 in the Dashboard to use this chat bot.
-
-## Open Source App
-
-- `Open Source App` uses open source embedding and LLM model. It uses `all-MiniLM-L6-v2` from Sentence Transformers library as the embedding model and `gpt4all` as the LLM.
-- Here there is no need to setup any api keys.
+- Add your `OpenAI API key` 🔑 in the Settings.
+- Create a new bot and you'll be navigated to its page.
+- Here you can add your data sources and then chat with the bot.
 
 🎉 Happy Chatting! 🎉

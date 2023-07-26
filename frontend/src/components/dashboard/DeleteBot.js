@@ -37,14 +37,12 @@ export default function DeleteBot() {
     <>
       <div className="w-full">
         {/* Delete Bot */}
-        <h2 className="pt-6 text-2xl font-bold text-gray-800">
-          Delete your bots
-        </h2>
+        <h2 className="text-xl font-bold text-gray-800">DELETE BOTS</h2>
         <form className="py-2" onSubmit={handleDeleteBot}>
-          <div className="mb-3">
-            <label className="block mb-2 text-sm font-medium text-gray-900">
-              List of Bots
-            </label>
+          <label className="block mb-2 text-sm font-medium text-gray-900">
+            List of Bots
+          </label>
+          <div className="flex flex-col sm:flex-row gap-x-4 gap-y-4">
             <select
               name="bot_name"
               defaultValue="none"
@@ -57,14 +55,13 @@ export default function DeleteBot() {
                 </option>
               ))}
             </select>
+            <button
+              type="submit"
+              className="h-fit text-white bg-red-600 hover:bg-red-600/90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            >
+              Delete
+            </button>
           </div>
-
-          <button
-            type="submit"
-            className="text-white bg-red-600 hover:bg-red-600/90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-          >
-            Delete
-          </button>
         </form>
       </div>
     </>
