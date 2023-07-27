@@ -1,4 +1,4 @@
-import Wrapper from "@/components/Wrapper";
+import Wrapper from "@/components/PageWrapper";
 import Sidebar from "@/containers/Sidebar";
 import CreateBot from "@/components/dashboard/CreateBot";
 import SetOpenAIKey from "@/components/dashboard/SetOpenAIKey";
@@ -32,7 +32,11 @@ export default function Home() {
             dataset
           </p>
         </div>
-        <div className="grid lg:grid-cols-2 pt-6 gap-y-4 gap-x-8">
+        <div
+          className={`pt-6 gap-y-4 gap-x-8 ${
+            isKeyPresent ? "grid lg:grid-cols-2" : "w-[50%] mx-auto"
+          }`}
+        >
           <SetOpenAIKey setIsKeyPresent={setIsKeyPresent} />
           {isKeyPresent && (
             <>

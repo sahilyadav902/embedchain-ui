@@ -73,36 +73,38 @@ export default function Sidebar() {
               </li>
 
               {/* Bots */}
-              <li>
-                <button
-                  type="button"
-                  className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-200"
-                  onClick={toggleDropdown}
-                >
-                  <BotIcon className="w-6 h-6 text-gray-600 transition duration-75 group-hover:text-gray-900" />
-                  <span className="flex-1 ml-3 text-left whitespace-nowrap">
-                    Bots
-                  </span>
-                  <DropdownIcon className="w-3 h-3" />
-                </button>
-                <ul
-                  id="dropdown-toggle"
-                  className="hidden text-sm py-2 space-y-2"
-                >
-                  {bots.map((bot, index) => (
-                    <React.Fragment key={index}>
-                      <li>
-                        <Link
-                          href={`/${bot.slug}/app`}
-                          className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200"
-                        >
-                          {bot.name}
-                        </Link>
-                      </li>
-                    </React.Fragment>
-                  ))}
-                </ul>
-              </li>
+              {bots.length !== 0 && (
+                <li>
+                  <button
+                    type="button"
+                    className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-200"
+                    onClick={toggleDropdown}
+                  >
+                    <BotIcon className="w-6 h-6 text-gray-600 transition duration-75 group-hover:text-gray-900" />
+                    <span className="flex-1 ml-3 text-left whitespace-nowrap">
+                      Bots
+                    </span>
+                    <DropdownIcon className="w-3 h-3" />
+                  </button>
+                  <ul
+                    id="dropdown-toggle"
+                    className="hidden text-sm py-2 space-y-2"
+                  >
+                    {bots.map((bot, index) => (
+                      <React.Fragment key={index}>
+                        <li>
+                          <Link
+                            href={`/${bot.slug}/app`}
+                            className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-200"
+                          >
+                            {bot.name}
+                          </Link>
+                        </li>
+                      </React.Fragment>
+                    ))}
+                  </ul>
+                </li>
+              )}
             </ul>
           </div>
           <div className="bg-gray-200 absolute bottom-0 left-0 right-0 h-20"></div>

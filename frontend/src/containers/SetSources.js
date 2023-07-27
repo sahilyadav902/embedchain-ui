@@ -1,5 +1,12 @@
 import { useState } from "react";
 import PlusIcon from "../../public/icons/plus.svg";
+import CrossIcon from "../../public/icons/cross.svg";
+import YoutubeIcon from "../../public/icons/youtube.svg";
+import PDFIcon from "../../public/icons/pdf.svg";
+import WebIcon from "../../public/icons/web.svg";
+import DocIcon from "../../public/icons/doc.svg";
+import SitemapIcon from "../../public/icons/sitemap.svg";
+import TextIcon from "../../public/icons/text.svg";
 
 export default function SetSources({
   setChats,
@@ -20,6 +27,20 @@ export default function SetSources({
     text: "Text",
   };
 
+  const dataIcons = {
+    youtube_video: <YoutubeIcon className="w-5 h-5 mr-3" />,
+    pdf_file: <PDFIcon className="w-5 h-5 mr-3" />,
+    web_page: <WebIcon className="w-5 h-5 mr-3" />,
+    doc_file: <DocIcon className="w-5 h-5 mr-3" />,
+    sitemap: <SitemapIcon className="w-5 h-5 mr-3" />,
+    text: <TextIcon className="w-5 h-5 mr-3" />,
+  };
+
+  const handleDropdownClose = () => {
+    setIsDropdownOpen(false);
+    setSourceName("");
+    setSelectChat(true);
+  };
   const handleDropdownSelect = (dataType) => {
     setSourceName(dataType);
     setSourceValue("");
@@ -36,13 +57,15 @@ export default function SetSources({
       message: `Adding the following ${dataTypes[sourceName]}: ${sourceValue}`,
     };
     setChats((prevChats) => [...prevChats, addDataSourceEntry]);
-
+    let name = sourceName;
+    let value = sourceValue;
+    setSourceValue("");
     const response = await fetch("/api/add_sources", {
       method: "POST",
       body: JSON.stringify({
         embedding_model,
-        name: sourceName,
-        value: sourceValue,
+        name,
+        value,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +85,6 @@ export default function SetSources({
       setChats((prevChats) => [...prevChats, errorEntry]);
     }
     setSourceName("");
-    setSourceValue("");
     setIsLoading(false);
     setSelectChat(true);
   };
@@ -80,21 +102,27 @@ export default function SetSources({
         {isDropdownOpen && (
           <div className="absolute left-0 bottom-full bg-white border border-gray-300 rounded-lg shadow-lg mb-2">
             <ul className="py-1">
+              <li
+                className="block px-4 py-2 text-sm text-black cursor-pointer hover:bg-gray-200"
+                onClick={handleDropdownClose}
+              >
+                <span className="flex items-center text-red-600">
+                  <CrossIcon className="w-5 h-5 mr-3" />
+                  Close
+                </span>
+              </li>
               {Object.entries(dataTypes).map(([key, value]) => (
                 <li
                   key={key}
                   className="block px-4 py-2 text-sm text-black cursor-pointer hover:bg-gray-200"
                   onClick={() => handleDropdownSelect(key)}
                 >
-                  {value}
+                  <span className="flex items-center">
+                    {dataIcons[key]}
+                    {value}
+                  </span>
                 </li>
               ))}
-              <li
-                className="block px-4 py-2 text-sm text-black cursor-pointer hover:bg-gray-200"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                None
-              </li>
             </ul>
           </div>
         )}

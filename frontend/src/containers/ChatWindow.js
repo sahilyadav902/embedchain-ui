@@ -4,7 +4,7 @@ import BotWrapper from "@/components/chat/BotWrapper";
 import HumanWrapper from "@/components/chat/HumanWrapper";
 import SetSources from "@/containers/SetSources";
 
-export default function ChatWindow({ embedding_model, app_type }) {
+export default function ChatWindow({ embedding_model, app_type, setBotTitle }) {
   const [bot, setBot] = useState(null);
   const [chats, setChats] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,6 +20,7 @@ export default function ChatWindow({ embedding_model, app_type }) {
         const data = await response.json();
         const matchingBot = data.find((item) => item.slug === bot_slug);
         setBot(matchingBot);
+        setBotTitle(matchingBot.name);
       };
       fetchBots();
     }
@@ -80,7 +81,7 @@ export default function ChatWindow({ embedding_model, app_type }) {
   return (
     <>
       <div className="flex flex-col justify-between h-full">
-        <div className="space-y-4 overflow-x-auto h-full pb-6">
+        <div className="space-y-4 overflow-x-auto h-full pb-8">
           {/* Greeting Message */}
           <BotWrapper>
             Hi, I am {bot?.name}. How can I help you today?
@@ -109,7 +110,7 @@ export default function ChatWindow({ embedding_model, app_type }) {
           )}
         </div>
 
-        <div className="bg-white fixed bottom-0 left-0 right-0 h-32 sm:h-20"></div>
+        <div className="bg-white fixed bottom-0 left-0 right-0 h-28 sm:h-16"></div>
 
         {/* Query Form */}
         <div className="flex flex-row gap-x-2 sticky bottom-3">
@@ -121,7 +122,7 @@ export default function ChatWindow({ embedding_model, app_type }) {
           {selectChat && (
             <form
               onSubmit={handleChatResponse}
-              className="w-full flex flex-col sm:flex-row gap-y-2 gap-x-2 items-center"
+              className="w-full flex flex-col sm:flex-row gap-y-2 gap-x-2"
             >
               <div className="w-full">
                 <input
